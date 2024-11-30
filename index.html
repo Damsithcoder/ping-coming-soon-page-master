@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+    }
+    body{
+      width: 1440px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+    }main{
+      width: 100/3%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    p,h1,.img,.icons{
+      padding-bottom: 25px;
+    }
+    .brand{
+      width: 50px;
+      
+
+    }
+    .hide{
+      display: none;
+      border-color: hsl(9, 91%, 50%);
+    }
+    form{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 25px;
+      width: 100%;
+      
+
+    }
+    .title{
+       color: hsl(0, 0%, 59%);  
+       font-size: 50px;    
+
+    }
+    b{
+      color: black;
+    }
+    .subtitle{
+      color: hsl(209, 33%, 12%);
+      
+
+    }
+    .img{
+      width: 100%;
+    }
+    .img img{
+      width: 100%;
+      
+
+    }
+    .error{
+      color: hsl(9, 91%, 50%);
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+    }
+
+    .text{
+      border: 1px solid hsl(228, 76%, 72%);
+      border-radius: 15px;
+      padding: 10px ;
+      width: 74%;
+    }
+    .btn{
+      border: 1px solid hsl(228, 76%, 72%);
+      border-radius: 15px;
+      padding: 10px ;
+      width: 25%;
+      background-color: hsl(223, 87%, 63%);
+      box-shadow: 0 5px 5px 2px hsl(0, 0%, 59%);
+    }
+    .icons{
+      padding: 10px ;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .logo{
+      border: 1px solid hsl(228, 76%, 72%);
+      border-radius: 50%;
+      padding: 10px ;
+      width: 75%;
+      margin-left: 5px;
+    }
+    .logo:hover{
+      border: 1px solid hsl(228, 76%, 72%);
+      border-radius: 50%;
+      padding: 10px ;
+      width: 100%;
+      background-color: hsl(228, 45%, 44%);
+    }
+
+    @media screen and (width < 500px) {
+      form{
+        flex-direction: column;
+      }
+      body{
+        width: 375px;
+        flex-direction: column;
+      }
+      main{
+        width: 80%;
+        flex-direction: column;
+      }
+      .text{
+        width: 100%;
+      }
+      .btn{
+        width: 100%;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="images/logo.svg" alt="" class="brand">
+    <h1 class="title"> We are launching <b>soon!</b> </h1>
+    <p class="subtitle">  Subscribe and get notified</p>
+    <form action="#" method="post">
+      <input class="text" type="text" name="email" id="email" placeholder="Your email is here">
+
+      <input class="btn" type="button" value="Notify Me">
+      <p class="error hide ">Please provide the valid email </p>
+    </form>
+    <div class="img">
+      <img src="images/illustration-dashboard.png" alt="">
+    </div>
+    <div class="icons">
+      <div class="logo  facebook">
+        <img src="images/app_facebook_logo_media_popular_icon.png" alt="">
+      </div>
+      <div class="logo  twitter">
+        <img src="images/app_logo_media_popular_social_icon.png" alt="">
+      </div>
+      <div class="logo  instagram">
+        <img src="images/app_instagram_logo_media_popular_icon.png" alt="">
+      </div>
+    </div>
+    <p>&copy; Copyright Ping. All rights reserved.</p>
+  </main>
+  <script>
+  const form = document.querySelector('form')
+  const email = form.querySelector('.text')
+  const btn = form.querySelector('.btn')
+  const error = document.querySelector('.error')
+
+  
+  function submit() {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (regex.test(email.value)) {
+      error.classList.add('hide')
+    } else {
+      console.log(email.value);
+      error.classList.remove('hide')
+      
+    }
+    
+  }
+  
+  btn.addEventListener('click',submit)
+  
+
+</script>
+
+ 
+
+ 
+
+  
+
+  
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>
